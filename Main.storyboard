@@ -18,23 +18,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="235" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="162" y="353" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="235" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="295" y="353" width="40" height="30"/>
                                 <state key="normal" title="Start"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint id="2565" firstAttribute="width" constant="40"/>
+                                </constraints>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="236" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="20.5" y="353" width="89" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="236" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="42" y="353" width="100" height="30"/>
                                 <state key="normal" title="Start Tutorial"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint id="3882" firstAttribute="width" constant="100"/>
+                                </constraints>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2191" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="120" y="351" width="32" height="34"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2191" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="191" y="351" width="50" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint id="3149" firstAttribute="width" constant="50"/>
+                                </constraints>
                             </textField>
                         </subviews>
+                        <constraints>
+                            <constraint id="2397" firstItem="236" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="333"/>
+                            <constraint id="2437" firstItem="236" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22"/>
+                            <constraint id="2442" firstItem="2191" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="331"/>
+                            <constraint id="2528" firstItem="235" firstAttribute="leading" secondItem="2191" secondAttribute="trailing" constant="54"/>
+                            <constraint id="2529" firstItem="235" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="333"/>
+                            <constraint id="2530" firstAttribute="trailingMargin" secondItem="235" secondAttribute="trailing" constant="59"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="_btnStart" destination="235" id="name-outlet-235"/>
