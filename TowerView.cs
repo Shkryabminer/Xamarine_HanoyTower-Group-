@@ -2,13 +2,14 @@ using CoreGraphics;
 using Foundation;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using UIKit;
 
 namespace XamarinAnimationIOS_HanoyTower_
 {
     public partial class TowerView : UIViewController
     {
-
+        int totalDisks = 0;
         public int AmountTowers { get; set; }
         UIView viewTowers;
         UIColor color;
@@ -16,6 +17,7 @@ namespace XamarinAnimationIOS_HanoyTower_
         Tower towerStart;
         Tower towerEnd;
         Tower towerTemp;
+         public delegate void Action();
 
         public TowerView(IntPtr handle) : base(handle)
         {
@@ -26,56 +28,43 @@ namespace XamarinAnimationIOS_HanoyTower_
         {
             base.ViewDidLoad();
             viewTowers = _viewForTowers;
-            towerStart = new Tower(100, viewTowers.Frame.Height);
-            towerEnd = new Tower(200, viewTowers.Frame.Height);
-            towerTemp = new Tower(300, viewTowers.Frame.Height);
+            towerStart = new Tower(viewTowers.Frame.Width/5, viewTowers.Frame.Height*0.9f);
+            towerEnd = new Tower(viewTowers.Frame.Width/2, viewTowers.Frame.Height * 0.9f);
+            towerTemp = new Tower(4 *viewTowers.Frame.Width / 5, viewTowers.Frame.Height * 0.9f);
             CreateViews();
+           // Start();
         }
 
         private void CreateViews()
         {
-            nfloat width = 100f;
-            nfloat height = viewTowers.Frame.Height / AmountTowers;
+            nfloat widthRect = 100f;
+            nfloat hightRect = viewTowers.Frame.Height / AmountTowers*0.8f;
             nfloat x;
             nfloat y;
 
             for (int i = 0; i < AmountTowers; i++)
             {
-                x = towerStart.X - (width / 2);
-                y = towerStart.Y - (towerStart.views.Count * height) - height;
-                var view = new UIView(new CGRect(x, y, width, height));
+                x = towerStart.X - (widthRect / 2);
+                y = towerStart.Y - (towerStart.views.Count * hightRect) - hightRect;
+
+               var view = new UIView(new CGRect(x, y, widthRect, hightRect));
+              
                 view.BackgroundColor = GetBrushes();
                 towerStart.views.Push(view);
                 viewTowers.AddSubview(view);
-                width -= 10;
+                widthRect += widthRect*(0.95f -2)/ AmountTowers;
             }
         }
 
         private UIColor GetBrushes()
         {
-            if (countColor > 5)
-            {
-                countColor = 0;
-            }
-            switch (countColor)
-            {
-                case 0:
-                    color = UIColor.Red;
-                    break;
-                case 1:
-                    color = UIColor.Green;
-                    break;
-                case 2:
-                    color = UIColor.Blue;
-                    break;
-                case 3:
-                    color = UIColor.Cyan;
-                    break;
-                case 4:
-                    color = UIColor.Brown;
-                    break;
-            }
-            countColor++;
+
+            int red = new Random().Next(255);
+            int green = new Random().Next(255);
+            int blue = new Random().Next(255);
+
+            UIColor color = UIColor.FromRGB(red, green, blue);
+            
             return color;
         }
 
@@ -97,16 +86,31 @@ namespace XamarinAnimationIOS_HanoyTower_
         //private void MoveDisk(Tower from, Tower to)
         //{
         //    Thread.Sleep(1000);
-        //    this.Dispatcher.Invoke(new Action(() =>
-        //    {
-        //        Button button = from.buttons.Pop();
-        //        int width = Convert.ToInt32(button.Width);
-        //        int left = to.Left - (width / 2);
-        //        Canvas.SetLeft(button, left);
-        //        int top = 300 - (to.buttons.Count * 10);
-        //        Canvas.SetTop(button, top);
-        //        to.buttons.Push(button);
-        //    }));
+
+            
+        //        UIView oneView = from.views.Pop();
+        //        nfloat width = Convert.ToInt32(oneView.Frame.Width);
+        //        nfloat left = to.X - (width / 2);
+        //      //  Canvas.SetLeft(oneView, left);
+        //        int top = 300 - (to.views.Count * 10);
+        //      //  Canvas.SetTop(oneView, top);
+        //        to.views.Push(oneView);
+          
+
+
+
+
+        //    //Thread.Sleep(1000);
+        //    //this.Dispatcher.Invoke(new Action(() =>
+        //    //{
+        //    //    UIView button = from.UIView.Pop();
+        //    //    int width = Convert.ToInt32(button.Width);
+        //    //    int left = to.Left - (width / 2);
+        //    //    Canvas.SetLeft(button, left);
+        //    //    int top = 300 - (to.buttons.Count * 10);
+        //    //    Canvas.SetTop(button, top);
+        //    //    to.buttons.Push(button);
+        //    //}));
         //}
     }
 
