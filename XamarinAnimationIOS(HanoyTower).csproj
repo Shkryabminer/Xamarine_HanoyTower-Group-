@@ -128,6 +128,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="SceneDelegate.cs" />
+    <Compile Include="Tower.cs" />
     <Compile Include="TowerView.cs" />
     <Compile Include="TowerView.designer.cs">
       <DependentUpon>TowerView.cs</DependentUpon>
