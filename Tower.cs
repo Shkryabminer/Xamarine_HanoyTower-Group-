@@ -22,6 +22,7 @@ namespace XamarinAnimationIOS_HanoyTower_
         private nfloat _y;
         public nfloat Y
         {
+            set { _y = value; }
             get
             {
                 return _y;
