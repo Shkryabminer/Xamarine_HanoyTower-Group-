@@ -103,7 +103,7 @@ namespace XamarinAnimationIOS_HanoyTower_
         }
 
         private void MoveDiskAsync(Tower start, Tower end)
-        {           
+        {
             UIView oneView = start.views.Pop();
             UIView.Animate(2f, () =>
             {
@@ -112,7 +112,7 @@ namespace XamarinAnimationIOS_HanoyTower_
             end.views.Push(oneView);
             start.Y += oneView.Frame.Height;
             end.Y -= oneView.Frame.Height;
-            
+
 
         }
 
@@ -139,6 +139,7 @@ namespace XamarinAnimationIOS_HanoyTower_
         //        UIView temp1 = towerStart.views.Pop();
         //        NextAnimation(source, temp1);
         //    });
-        
+
     }
+
 }
