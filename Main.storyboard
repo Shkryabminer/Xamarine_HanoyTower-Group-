@@ -56,9 +56,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="4569" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="25" y="25" width="364" height="706"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint id="4570" firstItem="4569" firstAttribute="top" secondItem="227" secondAttribute="bottom" constant="5"/>
+                            <constraint id="4571" firstItem="4569" firstAttribute="leading" secondItem="231" secondAttribute="leadingMargin" constant="5"/>
+                            <constraint id="4572" firstAttribute="trailingMargin" secondItem="4569" secondAttribute="trailing" constant="5"/>
+                            <constraint id="4573" firstItem="228" firstAttribute="top" secondItem="4569" secondAttribute="bottom" constant="5"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="_viewForTowers" destination="231" id="name-outlet-231"/>
+                        <outlet property="_viewForTowers" destination="4569" id="name-outlet-4569"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="232" userLabel="First Responder" sceneMemberID="firstResponder"/>

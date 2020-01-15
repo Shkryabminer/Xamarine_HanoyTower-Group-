@@ -127,6 +127,10 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="PaintView.cs" />
+    <Compile Include="PaintView.designer.cs">
+      <DependentUpon>PaintView.cs</DependentUpon>
+    </Compile>
     <Compile Include="SceneDelegate.cs" />
     <Compile Include="Tower.cs" />
     <Compile Include="TowerView.cs" />

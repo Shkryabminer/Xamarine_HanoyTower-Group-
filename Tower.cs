@@ -22,11 +22,14 @@ namespace XamarinAnimationIOS_HanoyTower_
         private nfloat _y;
         public nfloat Y
         {
+            set { _y = value; }
             get
             {
                 return _y;
             }
         }
+        float X_Point { get; set; }
+        float Y_Point { get; set; }
 
         public Stack<UIView> views;
 
@@ -35,6 +38,7 @@ namespace XamarinAnimationIOS_HanoyTower_
             _x = x;
             _y = y;
             views = new Stack<UIView>();
+
         }
     }
 }
